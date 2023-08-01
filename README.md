@@ -10,7 +10,7 @@ key = "YOUR TEXT GOES HERE"
 
 ## Endpoint
 
-** Translate text to English **
+**Translate text to English**
 
 - Path: `/route`
 - Method: `POST`
@@ -64,13 +64,18 @@ The application uses http://localhost:5555 to operate.
 
 ## UML
 ```
-+---------------------------+
-|      Flask Application    |
-+---------------------------+
-| -app: Flask              |
-| -max_val: int            |
-| -random_number: int      |
-+---------------------------+
-| +generate_random_number()|
-+---------------------------+
++-----------------------------------+
+|          Flask Application        |
++-----------------------------------+
+| -app: Flask                       |
+| -key: string                      |
+| -target: string                   |
+| -url: string                      |
++-----------------------------------+
+| +translate(body: json): string    |
++-----------------------------------+
+| +build_body(input: str): json     |
++-----------------------------------+
+| +googleTrans()                    |
++-----------------------------------+
 ```
