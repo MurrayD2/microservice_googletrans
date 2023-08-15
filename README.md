@@ -62,7 +62,7 @@ python3 translator.py
 
 The application uses http://localhost:5555 to operate.
 
-## UML
+## UML Class Diagram
 ```
 +-----------------------------------+
 |          Flask Application        |
@@ -78,4 +78,26 @@ The application uses http://localhost:5555 to operate.
 +-----------------------------------+
 | +googleTrans()                    |
 +-----------------------------------+
+```
+
+
+## UML Sequence Diagram
+```
++------------+          +------------+
+|main program|          |microservice|  
++------------+          +------------+
+       |                       |
+       __                      |
+      |  |                     __
+      |  |POST request to 5555|  |
+      |  |------------------> |  |
+      |  |{"text": str}       |  |
+      |  |                    |  |
+      |  |                    |  |
+      |  |   HTTP response    |  |
+      |  | <------------------|__|
+      |  |{"translation": str} |                                
+      |  |                     |
+      |  |                     |
+      |  |                     |
 ```
